@@ -1,5 +1,6 @@
 package services;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import models.Comment;
@@ -12,7 +13,12 @@ public class CommentService {
     private final CommentRepository commentRepository;
     private final CommentNotificationProxy commentNotificationProxy;
 
-    public CommentService(CommentRepository commentRepository, CommentNotificationProxy commentNotificationProxy) {
+    public CommentService(
+            CommentRepository commentRepository,
+            // For each parameter where we want to use a specific implementation, we
+            // annotate the parameter with @Qualifier.
+            @Qualifier("PUSH") CommentNotificationProxy commentNotificationProxy) {
+
         this.commentRepository = commentRepository;
         this.commentNotificationProxy = commentNotificationProxy;
     }
