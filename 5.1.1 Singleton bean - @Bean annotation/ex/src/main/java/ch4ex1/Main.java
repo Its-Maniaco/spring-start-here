@@ -11,7 +11,7 @@ public class Main {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
                 ProjectConfiguration.class);
         // get the beans
-        CommentService cs1 = context.getBean("commentService", CommentService.class);
+        CommentService cs1 = context.getBean(CommentService.class); // only single bean of type, no need to use name
         CommentService cs2 = context.getBean("commentService", CommentService.class);
         System.out.println(cs1 == cs2); // true because cs1 and cs2 refer to the same bean.
     }
