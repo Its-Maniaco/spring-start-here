@@ -1,0 +1,7 @@
+The following list summarizes the steps we’ll take to create the Spring Boot project
+using start.spring.io (figure 7.10):
+1. Access start.spring.io in a web browser.
+2. Select the project properties (language, the version, the build tool, and so on).
+3. Select the needed dependencies you want to add to your project.
+4. Use the Generate button to download the archived project.
+5. Unarchive the project and open it in your IDE.
